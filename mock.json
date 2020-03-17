@@ -1,0 +1,42 @@
+{
+  "mockLogin": {
+    "userId": 123,
+    "userName": "Tanmoy Sen"
+  },
+  "mockAccountData": [
+    {
+      "accountNumber": 1024,
+      "balence": 5000
+    }
+  ],
+  "listBeneficiary": [
+    {
+      "beneficiaryName": " Sachin tendulkar",
+      "accountNumber": 789456,
+      "ifscCode": 978,
+      "customerId": 123
+    },
+    {
+      "beneficiaryName": " Sourav Ganguly",
+      "accountNumber": 789450,
+      "ifscCode": 878,
+      "customerId": 124
+    }
+  ],
+  "history": [
+    {
+      "description": "done",
+      "transactionId": 100001,
+      "transactionType": "Debit",
+      "dateTime": "27-01-2020",
+      "amount": 5000
+    },
+    {
+      "description": "In process",
+      "transactionId": 100002,
+      "transactionType": "Debit",
+      "dateTime": "27-02-2020",
+      "amount": 8000
+    }
+  ]
+}

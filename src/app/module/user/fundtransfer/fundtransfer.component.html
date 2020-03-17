@@ -1,0 +1,25 @@
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+<p-tabView>
+        <p-tabPanel header="Fund Transfer">
+        <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-4">
+        <span>Payee Name</span>
+        <p-dropdown [options]="payeelist" [(ngModel)]="selectedPayee" placeholder="Select a Payee" optionLabel="beneficiaryName" [showClear]="true"></p-dropdown>
+   </div>
+   <div class="ui-g-12 ui-md-4">
+     
+                <span>Amount</span>
+              
+                <input class="fullWidth" type="text" [(ngModel)] ="transferAmount" required numbersOnly pInputText placeholder="amount" style="height:32px;">         
+          
+</div>
+        </div>
+<div class="ui-g ui-fluid">
+<div class="ui-g-12 ui-md-2">
+        <div class="ui-inputgroup">
+    <button class="transferbutton" pButton type="button" label="Transfer" (click)="transfer()"></button></div>
+</div>
+   </div>
+
+    </p-tabPanel>
+    </p-tabView>

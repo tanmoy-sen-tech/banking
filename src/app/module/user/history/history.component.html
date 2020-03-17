@@ -1,0 +1,13 @@
+
+<p-tabView>
+        <p-tabPanel header="Transaction History">
+<div class="transaction-container">
+        <h3>Transaction History</h3>
+        <div class="grid-container">
+            <app-grid [gridData]="statements" [gridColumnDefinition]="gridColumns"
+                [sorting]="sorting" [pageLinks]="pageLinks" [pagination]="pagination"
+                *ngIf="statements">
+            </app-grid>
+        </div>
+    </div>
+        </p-tabPanel></p-tabView>

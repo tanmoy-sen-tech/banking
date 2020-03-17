@@ -1,0 +1,49 @@
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+<p-tabView>
+    <p-tabPanel header="View Payee({{payeelist?.length}})">
+        <p-accordion *ngFor="let payee of payeelist">
+            <p-accordionTab header="{{payee?.beneficiaryName}}">
+               <p>
+                   Beneficiary Name : {{payee?.beneficiaryName}}
+               </p>
+               <p>
+                Acccount Number : {{payee?.accountNumber}}
+            </p>
+            <p>
+               IFSC Code : {{payee?.ifscCode}}
+            </p>
+            </p-accordionTab>
+        </p-accordion>
+    </p-tabPanel>
+    <p-tabPanel header="Add Payee">
+        <h3 class="first">Payee Details</h3>
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+                    <input class="fullWidth" type="text" [(ngModel)] ="payeeName" required pInputText placeholder="Name">         
+                </div>
+            </div>
+            
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+                    <input class="fullWidth" type="text" [(ngModel)] ="payeeAcNo" pInputText numbersOnly maxlength="13" required placeholder="Account Number">         
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+                    <input class="fullWidth"[(ngModel)] ="payeeIfsc" type="text" required pInputText placeholder="IFSC Code">         
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-2">
+                    <div class="ui-inputgroup">
+                <button class="addbutton" pButton type="button" label="Add" (click)="addPayee()"></button></div>
+           </div>
+           </div>
+        
+    </p-tabPanel>
+    
+</p-tabView>
+
