@@ -8,10 +8,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FundtransferComponent } from './fundtransfer/fundtransfer.component';
 import { PayeeComponent } from './payee/payee.component';
 import { HistoryComponent } from './history/history.component';
-
+import { GridComponent } from 'src/app/shared/grid/grid.component';
 
 @NgModule({
-  declarations: [LoginComponent, DashboardComponent, FundtransferComponent, PayeeComponent, HistoryComponent],
+  declarations: [LoginComponent, DashboardComponent, FundtransferComponent, PayeeComponent,GridComponent, HistoryComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

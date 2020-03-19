@@ -13,7 +13,7 @@ import { PrimeModule } from './primeng-module';
 import { DateValidate } from '../helper/validation';
 import { OnlynumberDirective } from 'src/app/helper/allow-number.directive';
 @NgModule({
-  declarations: [AlertComponent, SpinnerComponent, GridComponent,OnlynumberDirective],
+  declarations: [AlertComponent, SpinnerComponent,OnlynumberDirective],
   imports: [
     CommonModule,
     FormsModule,
@@ -26,7 +26,6 @@ import { OnlynumberDirective } from 'src/app/helper/allow-number.directive';
     ReactiveFormsModule,
     AlertComponent,
     SpinnerComponent,
-    GridComponent,
     PrimeModule ,
     OnlynumberDirective]
 })
