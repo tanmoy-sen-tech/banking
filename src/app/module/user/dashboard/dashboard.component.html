@@ -1,12 +1,12 @@
 <h3>Welcome {{ userDetail?.userName }}</h3>
 <p-tabView>
         <p-tabPanel  header="Account Details">
-           <div *ngFor="let account of userAccountDetails"> <h5>Details</h5>
+           <div> <h5>Details</h5>
                 <p>
-                        Account Number:{{account?.accountNumber}}
+                        Account Number:{{userAccountDetails?.accountNumber}}
                                     </p>
                                     <p>
-                                        Balence:{{account?.balence}}
+                                        Balence:{{userAccountDetails?.balence}}
                                     </p>
            </div> 
             </p-tabPanel>

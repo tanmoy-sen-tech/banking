@@ -30,6 +30,7 @@ routerpath:string;
       this.userAccountDetails = data;
       this.spinner =false;
       this.notificationService.sendRoute( this.routerpath );
+      
   });
 }
 }

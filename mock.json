@@ -3,12 +3,12 @@
     "userId": 123,
     "userName": "Tanmoy Sen"
   },
-  "mockAccountData": [
+  "mockAccountData": 
     {
       "accountNumber": 1024,
-      "balence": 5000
+      "balence": 5200
     }
-  ],
+  ,
   "listBeneficiary": [
     {
       "beneficiaryName": " Sachin tendulkar",

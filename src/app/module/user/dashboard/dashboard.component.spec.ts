@@ -22,12 +22,12 @@ describe('DashboardComponent', () => {
     getList(url: string) {
       // tslint:disable-next-line: no-unused-expression
       return of(
-        [
+        
           {
             "accountNumber": 1024,
             "balence": 5000
           }
-        ]
+        
       );
     }
    
