@@ -59,4 +59,35 @@ describe('FundtransferComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should check values are not undefined', () => {
+    
+    // const payeeName = "tanmoy";
+    // const payeeAcNo = 123;
+    // const payeeIfsc = 456;
+    // component.addPayee();
+    // expect(payeeName).toBeDefined();
+    // expect(payeeAcNo).toBeDefined();
+    // expect(payeeIfsc).toBeDefined();
+    // expect(payeeName.length).toBeGreaterThan(0);
+    // expect(payeeAcNo).toBeGreaterThan(0);
+    // expect(payeeIfsc).toBeGreaterThan(0);
+    const selectedPayee = {
+      "beneficiaryName": " Sachin tendulkar",
+      "accountNumber": 789456,
+      "ifscCode": 978,
+      "customerId": 123
+    };
+    const selectedPayeeUndefined = undefined;
+    const transferAmount = 2000;
+    const invalidAmount = -2000;
+    component.transfer();
+    expect(selectedPayee).toBeTruthy();
+    component.transfer();
+    expect(selectedPayeeUndefined).toBeUndefined();
+    component.transfer();
+    expect(selectedPayee.accountNumber).toBeDefined();
+    expect(transferAmount).toBeGreaterThan(0);
+    component.transfer();
+    expect(invalidAmount).toBeLessThanOrEqual(0);
+       });
 });
