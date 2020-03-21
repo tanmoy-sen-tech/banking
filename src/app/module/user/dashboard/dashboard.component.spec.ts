@@ -22,15 +22,12 @@ describe('DashboardComponent', () => {
     getList(url: string) {
       // tslint:disable-next-line: no-unused-expression
       return of(
-        
           {
-            "accountNumber": 1024,
-            "balence": 5000
+            accountNumber: 1024,
+            balence: 5000
           }
-        
       );
     }
-   
   };
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -38,7 +35,7 @@ describe('DashboardComponent', () => {
       imports: [SharedModuleModule, HttpClientTestingModule, PrimeModule ],
        providers: [
         { provide: Router, useValue: mockRouter },
-        { provide: Service, useValue: MockUserService }, NotificationService,MessageService,
+        { provide: Service, useValue: MockUserService }, NotificationService, MessageService,
         UrlConfig]
     })
     .compileComponents();

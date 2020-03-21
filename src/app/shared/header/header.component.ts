@@ -3,9 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NotificationService } from 'src/app/service/notification-service';
 
-import { Service } from 'src/app/service/service';
 
-import { UrlConfig } from 'src/app/service/url-config';
 
 @Component({
   selector: 'app-header',
@@ -16,8 +14,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   subscrptionroute: Subscription;
   toggleFlag = false;
-  routerpath: string= '/';
- 
+  routerpath = '/';
   constructor(
     private router: Router,
     private notificationService: NotificationService) {
@@ -37,13 +34,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
- 
     this.getRoutepath();
   }
 
   ngOnDestroy() {
    /* unsubscribe to ensure no memory leaks */
-   
     this.subscrptionroute.unsubscribe();
   }
   public getRoutepath() {

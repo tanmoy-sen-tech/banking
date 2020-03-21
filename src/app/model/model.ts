@@ -1,7 +1,7 @@
 
-export interface payee {
-    beneficiaryName: String;
+export interface  Payee {
+    beneficiaryName: string;
      accountNumber: number;
-     ifscCode:number;
-    customerId:number;
+     ifscCode: number;
+    customerId: number;
   }

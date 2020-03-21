@@ -24,9 +24,10 @@ describe('LoginComponent', () => {
   const MockUserService = {
     getList() {
       return of([{
-        "userId": 123,
-        "userName": "Tanmoy Sen"
-      },]);
+        userId: 123,
+        userName: 'Tanmoy Sen'
+      },
+    ]);
     },
     modalConfig: () => ({
       header: '',
@@ -52,7 +53,7 @@ describe('LoginComponent', () => {
         { provide: Router, useValue: mockRouter },
         { provide: FormBuilder, useValue: formBuilder },
         { provide: Service, useValue: MockUserService },
-        UrlConfig, ConstantService,CommonService,NotificationService]
+        UrlConfig, ConstantService, CommonService, NotificationService]
     })
       .compileComponents();
     mockRouter = TestBed.get(Router);
@@ -70,4 +71,16 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('on click submit ', () => {
+component.submitted = false;
+component.onClickSubmit();
+component.submitted = true;
+expect(component.loginForm.valid).toBeFalsy();
+component.loginForm.controls.userId.setValue('test');
+component.loginForm.controls.password.setValue('123456789');
+expect(component.loginForm.valid).toBeTruthy();
+  });
+  it('get login ', () => {
+    return component.loginForm.controls;
+      });
 });

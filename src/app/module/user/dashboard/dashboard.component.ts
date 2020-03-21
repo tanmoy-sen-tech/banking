@@ -11,26 +11,25 @@ import { NotificationService } from 'src/app/service/notification-service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-userDetail:any;
-userAccountDetails:any;
+userDetail: any;
+userAccountDetails: any;
 spinner = false;
-routerpath:string;
+routerpath: string;
   constructor(private routerString: Router, private url: UrlConfig, public api: Service,  private messageService: MessageService,
-    private notificationService: NotificationService) { 
+              private notificationService: NotificationService) {
     this.routerpath = routerString.url;
   }
 
   ngOnInit() {
     this.getUserAccountDetails();
   }
-  getUserAccountDetails(){
-    this.spinner =true;
+  getUserAccountDetails() {
+    this.spinner = true;
     this.userDetail = JSON.parse(sessionStorage.getItem('currentUser'));
     this.api.getList(this.url.urlConfig().mockAccountData).subscribe(data => {
       this.userAccountDetails = data;
-      this.spinner =false;
+      this.spinner = false;
       this.notificationService.sendRoute( this.routerpath );
-      
   });
 }
 }

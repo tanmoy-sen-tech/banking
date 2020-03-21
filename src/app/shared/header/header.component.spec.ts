@@ -4,8 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NotificationService } from 'src/app/service/notification-service';
-import { UrlConfig } from 'src/app/service/url-config';
-import { Service } from 'src/app/service/service';
 import { of } from 'rxjs/internal/observable/of';
 
 
@@ -13,9 +11,7 @@ describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let notification: NotificationService;
-  let api: Service;
-  let url: UrlConfig;
-  let mockRouter = {
+  const mockRouter = {
     navigate: jasmine.createSpy('navigate')
   };
   const MockUserService = {
@@ -33,7 +29,7 @@ describe('HeaderComponent', () => {
     },
     getRoute: () => {
       return of(
-       '/order/cart'
+       '/order/cart' || null
       );
     },
     clearMessages: () => {}
@@ -63,5 +59,11 @@ describe('HeaderComponent', () => {
     component.toggleFlag = true;
     component.toggle();
     expect(component.toggleFlag).toBe(false);
+  });
+  it('should logout ', () => {
+    component.logout();
+    sessionStorage.clear();
+    notification.clearMessages();
+    mockRouter.navigate(['/']);
   });
 });

@@ -11,7 +11,7 @@ import { HistoryComponent } from './history/history.component';
 import { GridComponent } from 'src/app/shared/grid/grid.component';
 
 @NgModule({
-  declarations: [LoginComponent, DashboardComponent, FundtransferComponent, PayeeComponent,GridComponent, HistoryComponent],
+  declarations: [LoginComponent, DashboardComponent, FundtransferComponent, PayeeComponent, GridComponent, HistoryComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

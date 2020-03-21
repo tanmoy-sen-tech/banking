@@ -28,7 +28,7 @@ import {TabViewModule} from 'primeng/tabview';
   ],
   providers: [],
   exports: [ CardModule, CalendarModule, DropdownModule, TableModule,
-    CarouselModule, RadioButtonModule, ButtonModule, DialogModule, ToastModule,AccordionModule,
+    CarouselModule, RadioButtonModule, ButtonModule, DialogModule, ToastModule, AccordionModule,
     TabViewModule ]
 })
 export class PrimeModule { }

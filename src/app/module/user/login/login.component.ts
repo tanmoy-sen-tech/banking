@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   spinner = false;
-  userData:any;
-  routerPath:string;
+  userData: any;
+  routerPath: string;
   constructor(
     private fb: FormBuilder,
     private api: Service,
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     private userConstant: ConstantService,
     public common: CommonService,
     private notificationService: NotificationService
-  ) { 
+  ) {
     this.routerPath = router.url;
   }
 /*  Login form controls creation */
@@ -51,42 +51,20 @@ public onClickSubmit() {
     const postObject = {
       userId: Number(this.loginForm.value.userId),
       password: this.loginForm.value.password
-    };  
-   
+    };
     /*Mock*/
-  
-      this.api.getList(this.url.urlConfig().mockLogin).subscribe(data => {
+    this.api.getList(this.url.urlConfig().mockLogin).subscribe(data => {
         console.log(data);
         this.userData = data;
-        if(this.userData){const userDetails = {
+        if (this.userData) {
+          const userDetails = {
           userName: this.userData.userName,
-          userId:this.userData.userId
+          userId: this.userData.userId
         };
-      sessionStorage.setItem('currentUser', JSON.stringify(userDetails));
-     
-      this.router.navigate(['/user/dashboard']);}
+          sessionStorage.setItem('currentUser', JSON.stringify(userDetails));
+          this.router.navigate(['/user/dashboard']);
+        }
       });
-    
-       
-    /* Api call*/
-    // this.api.postCall(this.url.urlConfig().userLogin, postObject, 'post').subscribe(user => {
-    //   if (user.statusCode === 200) {
-    //     const userDetails = {
-    //       userName: user.userName,
-    //       userId: user.userId
-    //     };
-    //     /* Stored the user details in session storage */
-    //     sessionStorage.setItem('currentUser', JSON.stringify(userDetails));
-    //     this.spinner = false;
-    //     this.router.navigate(['/user/dashboard']);
-    //   } else {
-    //     this.common.alertConfig = this.common.modalConfig(
-    //       'Error', this.userConstant.messageConstant()[user.statusCode],
-    //       true, [{ name: 'Ok' }]
-    //       );
-    //     this.spinner = false;
-    //   }
-    // });
   }
 }
 
@@ -107,8 +85,10 @@ ngOnInit() {
   if (!this.common.validUser()) {
     this.router.navigate(['/']);
   }
+  this.spinner = true;
   /* Call the form creation while on component initiation */
   this.createForm();
+  this.spinner = false;
 }
 
 }

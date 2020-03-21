@@ -14,7 +14,6 @@ export class UrlConfig {
             mockAccountData: this.apiMock + 'mockAccountData',
             listBeneficiary: this.apiMock + 'listBeneficiary',
             history: this.apiMock + 'history'
-           
         };
     }
     /* url config with url Server list */
@@ -32,7 +31,6 @@ export class UrlConfig {
             mockAccountData: this.apiMock + 'mockAccountData',
             listBeneficiary: this.apiMock + 'listBeneficiary',
             history: this.apiMock + 'history'
-    
         };
     }
 

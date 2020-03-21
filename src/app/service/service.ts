@@ -84,5 +84,4 @@ export class Service {
       button: btn
     };
   }
- 
 }

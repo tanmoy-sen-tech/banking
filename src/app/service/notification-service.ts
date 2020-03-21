@@ -6,8 +6,6 @@ import { Observable, Subject } from 'rxjs';
 export class NotificationService {
     private subject = new Subject<any>();
     private rotersubject = new Subject<any>();
- 
-
     /* Set the message in subject variable */
     sendMessage(message: any) {
         this.subject.next(message);
@@ -16,12 +14,10 @@ export class NotificationService {
 
       this.rotersubject.next(messager);
   }
-  
     /* Clear the message from subject*/
     clearMessages() {
         this.subject.next();
         this.rotersubject.next();
-        
     }
 
     /* Get the message from subject*/
@@ -31,5 +27,4 @@ export class NotificationService {
     getRoute(): Observable<any> {
       return this.rotersubject.asObservable();
     }
-  
 }

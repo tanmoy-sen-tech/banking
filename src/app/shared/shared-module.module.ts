@@ -8,12 +8,10 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { Service } from '../service/service';
 import { AuthGuard } from '../service/auth-guard';
 import { UrlConfig } from '../service/url-config';
-import { GridComponent } from './grid/grid.component';
 import { PrimeModule } from './primeng-module';
-import { DateValidate } from '../helper/validation';
 import { OnlynumberDirective } from 'src/app/helper/allow-number.directive';
 @NgModule({
-  declarations: [AlertComponent, SpinnerComponent,OnlynumberDirective],
+  declarations: [AlertComponent, SpinnerComponent, OnlynumberDirective],
   imports: [
     CommonModule,
     FormsModule,
@@ -21,7 +19,7 @@ import { OnlynumberDirective } from 'src/app/helper/allow-number.directive';
     HttpClientModule,
     PrimeModule
   ],
-  providers: [Service, AuthGuard, UrlConfig, DateValidate],
+  providers: [Service, AuthGuard, UrlConfig ],
   exports: [ FormsModule,
     ReactiveFormsModule,
     AlertComponent,

@@ -8,11 +8,11 @@ import { FundtransferComponent } from './fundtransfer/fundtransfer.component';
 
 
 const routes: Routes = [
-  {path:'',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent},
-  {path:'history',component:HistoryComponent},
-  {path:'payee',component:PayeeComponent},
-  {path:'fundtransfer',component:FundtransferComponent}
+  {path: '', component: LoginComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'history', component: HistoryComponent},
+  {path: 'payee', component: PayeeComponent},
+  {path: 'fundtransfer', component: FundtransferComponent}
 ];
 
 @NgModule({

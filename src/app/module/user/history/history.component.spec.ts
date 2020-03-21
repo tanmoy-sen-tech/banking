@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HistoryComponent } from './history.component';
 import { GridComponent } from 'src/app/shared/grid/grid.component';
 import { Service } from 'src/app/service/service';
@@ -25,16 +24,15 @@ describe('HistoryComponent', () => {
       return of(
         [
           {
-            "description": "done",
-            "transactionId": 100001,
-            "transactionType": "Debit",
-            "dateTime": "27-01-2020",
-            "amount": 5000
+            description: 'done',
+            transactionId: 100001,
+            transactionType: 'Debit',
+            dateTime: '27-01-2020',
+            amount: 5000
           },
         ]
       );
     }
-   
   };
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -42,7 +40,7 @@ describe('HistoryComponent', () => {
       imports: [SharedModuleModule, HttpClientTestingModule, PrimeModule ],
        providers: [
         { provide: Router, useValue: mockRouter },
-        { provide: Service, useValue: MockUserService }, NotificationService,MessageService,
+        { provide: Service, useValue: MockUserService }, NotificationService, MessageService,
         UrlConfig]
     })
     .compileComponents();

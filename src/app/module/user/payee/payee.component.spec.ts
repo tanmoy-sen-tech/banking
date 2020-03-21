@@ -16,7 +16,6 @@ describe('PayeeComponent', () => {
   let component: PayeeComponent;
   let fixture: ComponentFixture<PayeeComponent>;
   let api: Service;
-  let msg: MessageService;
   let mockRouter = {
     navigate: jasmine.createSpy('navigate')
   };
@@ -26,23 +25,22 @@ describe('PayeeComponent', () => {
       return of(
         [
           {
-            "beneficiaryName": " Sachin tendulkar",
-            "accountNumber": 789456,
-            "ifscCode": 978,
-            "customerId": 123
+            beneficiaryName:  'Sachin tendulkar',
+            accountNumber: 789456,
+            ifscCode: 978,
+            customerId: 123
           }
         ]
       );
     }
-   
   };
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PayeeComponent ],
-      imports: [SharedModuleModule, HttpClientTestingModule, PrimeModule,BrowserAnimationsModule ],
+      imports: [SharedModuleModule, HttpClientTestingModule, PrimeModule, BrowserAnimationsModule ],
        providers: [
         { provide: Router, useValue: mockRouter },
-        { provide: Service, useValue: MockUserService }, NotificationService,MessageService,
+        { provide: Service, useValue: MockUserService }, NotificationService, MessageService,
         UrlConfig]
     })
     .compileComponents();
@@ -62,16 +60,15 @@ describe('PayeeComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should check values are not undefined', () => {
-    
-const payeeName = "tanmoy";
-const payeeAcNo = 123;
-const payeeIfsc = 456;
-component.addPayee();
-expect(payeeName).toBeDefined();
-expect(payeeAcNo).toBeDefined();
-expect(payeeIfsc).toBeDefined();
-expect(payeeName.length).toBeGreaterThan(0);
-expect(payeeAcNo).toBeGreaterThan(0);
-expect(payeeIfsc).toBeGreaterThan(0);
+  const payeeName = 'tanmoy';
+  const payeeAcNo = 123;
+  const payeeIfsc = 456;
+  component.addPayee();
+  expect(payeeName).toBeDefined();
+  expect(payeeAcNo).toBeDefined();
+  expect(payeeIfsc).toBeDefined();
+  expect(payeeName.length).toBeGreaterThan(0);
+  expect(payeeAcNo).toBeGreaterThan(0);
+  expect(payeeIfsc).toBeGreaterThan(0);
    });
 });

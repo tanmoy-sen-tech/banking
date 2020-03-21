@@ -10,14 +10,15 @@ import { NotificationService } from 'src/app/service/notification-service';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
-statements:[];
+statements: [];
 gridColumns = [];
   pagination = true;
   sorting = true;
   pageLinks = 5;
-  routerpath:string;
-  constructor(private routerString: Router, private url: UrlConfig, public api: Service, private notificationService: NotificationService) { 
-    this.routerpath = routerString.url;
+  routerpath: string;
+  constructor(private routerString: Router, private url: UrlConfig, public api: Service,
+              private notificationService: NotificationService) {
+              this.routerpath = routerString.url;
   }
   private generateGridColumn(): void {
     this.gridColumns = [
@@ -45,12 +46,10 @@ gridColumns = [];
     this.getHistory();
     this.notificationService.sendRoute( this.routerpath );
   }
-getHistory(){
+getHistory() {
   this.generateGridColumn();
   this.api.getList(this.url.urlConfig().history).subscribe(data => {
-
-    console.log(data);
-  this.statements = data;
+    this.statements = data;
     });
   }
 }
